@@ -34,17 +34,33 @@ const Index = () => {
   const [favorites, setFavorites] = useState<number[]>([]);
 
   const products: Product[] = [
-    { id: 1, name: 'iPhone 15 Pro Max', brand: 'Apple', price: 119990, oldPrice: 139990, rating: 4.9, reviews: 234, image: '/placeholder.svg', category: 'Смартфоны', inStock: true },
-    { id: 2, name: 'MacBook Pro 16"', brand: 'Apple', price: 249990, rating: 4.8, reviews: 156, image: '/placeholder.svg', category: 'Ноутбуки', inStock: true },
-    { id: 3, name: 'Samsung Galaxy S24 Ultra', brand: 'Samsung', price: 109990, oldPrice: 129990, rating: 4.7, reviews: 189, image: '/placeholder.svg', category: 'Смартфоны', inStock: true },
-    { id: 4, name: 'AirPods Pro 2', brand: 'Apple', price: 24990, rating: 4.8, reviews: 567, image: '/placeholder.svg', category: 'Наушники', inStock: true },
-    { id: 5, name: 'Sony WH-1000XM5', brand: 'Sony', price: 32990, rating: 4.9, reviews: 423, image: '/placeholder.svg', category: 'Наушники', inStock: true },
-    { id: 6, name: 'iPad Air 5', brand: 'Apple', price: 64990, rating: 4.7, reviews: 298, image: '/placeholder.svg', category: 'Планшеты', inStock: true },
-    { id: 7, name: 'ASUS ROG Strix G16', brand: 'ASUS', price: 159990, rating: 4.6, reviews: 145, image: '/placeholder.svg', category: 'Ноутбуки', inStock: false },
-    { id: 8, name: 'Xiaomi 13 Pro', brand: 'Xiaomi', price: 69990, oldPrice: 89990, rating: 4.5, reviews: 312, image: '/placeholder.svg', category: 'Смартфоны', inStock: true },
+    { id: 1, name: 'NVIDIA GeForce RTX 4090', brand: 'NVIDIA', price: 189990, oldPrice: 219990, rating: 4.9, reviews: 543, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 2, name: 'AMD Radeon RX 7900 XTX', brand: 'AMD', price: 114990, rating: 4.8, reviews: 387, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 3, name: 'Intel Core i9-14900K', brand: 'Intel', price: 64990, rating: 4.9, reviews: 621, image: '/placeholder.svg', category: 'Процессоры', inStock: true },
+    { id: 4, name: 'AMD Ryzen 9 7950X', brand: 'AMD', price: 59990, oldPrice: 69990, rating: 4.8, reviews: 498, image: '/placeholder.svg', category: 'Процессоры', inStock: true },
+    { id: 5, name: 'ASUS ROG Strix Z790-E', brand: 'ASUS', price: 44990, rating: 4.7, reviews: 234, image: '/placeholder.svg', category: 'Материнские платы', inStock: true },
+    { id: 6, name: 'MSI MAG B650 TOMAHAWK', brand: 'MSI', price: 24990, rating: 4.6, reviews: 312, image: '/placeholder.svg', category: 'Материнские платы', inStock: true },
+    { id: 7, name: 'Corsair Vengeance DDR5 64GB', brand: 'Corsair', price: 22990, oldPrice: 27990, rating: 4.8, reviews: 445, image: '/placeholder.svg', category: 'Оперативная память', inStock: true },
+    { id: 8, name: 'G.Skill Trident Z5 RGB 32GB', brand: 'G.Skill', price: 14990, rating: 4.7, reviews: 389, image: '/placeholder.svg', category: 'Оперативная память', inStock: true },
+    { id: 9, name: 'Samsung 990 PRO 2TB NVMe', brand: 'Samsung', price: 19990, rating: 4.9, reviews: 678, image: '/placeholder.svg', category: 'SSD накопители', inStock: true },
+    { id: 10, name: 'WD Black SN850X 1TB', brand: 'Western Digital', price: 11990, oldPrice: 14990, rating: 4.7, reviews: 523, image: '/placeholder.svg', category: 'SSD накопители', inStock: true },
+    { id: 11, name: 'Corsair RM1000x 1000W', brand: 'Corsair', price: 18990, rating: 4.8, reviews: 356, image: '/placeholder.svg', category: 'Блоки питания', inStock: true },
+    { id: 12, name: 'be quiet! Dark Power 13 850W', brand: 'be quiet!', price: 16990, rating: 4.9, reviews: 289, image: '/placeholder.svg', category: 'Блоки питания', inStock: true },
+    { id: 13, name: 'NZXT Kraken X73 RGB', brand: 'NZXT', price: 17990, rating: 4.7, reviews: 412, image: '/placeholder.svg', category: 'Охлаждение', inStock: true },
+    { id: 14, name: 'Arctic Liquid Freezer II 360', brand: 'Arctic', price: 12990, oldPrice: 15990, rating: 4.8, reviews: 534, image: '/placeholder.svg', category: 'Охлаждение', inStock: true },
+    { id: 15, name: 'Lian Li O11 Dynamic EVO', brand: 'Lian Li', price: 16990, rating: 4.9, reviews: 467, image: '/placeholder.svg', category: 'Корпуса', inStock: true },
+    { id: 16, name: 'Fractal Design Torrent', brand: 'Fractal Design', price: 21990, rating: 4.8, reviews: 298, image: '/placeholder.svg', category: 'Корпуса', inStock: true },
+    { id: 17, name: 'ASUS TUF Gaming VG27AQ', brand: 'ASUS', price: 34990, oldPrice: 39990, rating: 4.7, reviews: 623, image: '/placeholder.svg', category: 'Мониторы', inStock: true },
+    { id: 18, name: 'LG UltraGear 27GP950-B', brand: 'LG', price: 64990, rating: 4.9, reviews: 445, image: '/placeholder.svg', category: 'Мониторы', inStock: true },
+    { id: 19, name: 'Logitech G Pro X Superlight', brand: 'Logitech', price: 14990, rating: 4.8, reviews: 789, image: '/placeholder.svg', category: 'Периферия', inStock: true },
+    { id: 20, name: 'Razer BlackWidow V4 Pro', brand: 'Razer', price: 24990, rating: 4.7, reviews: 556, image: '/placeholder.svg', category: 'Периферия', inStock: true },
+    { id: 21, name: 'Kingston Fury Beast 32GB', brand: 'Kingston', price: 8990, oldPrice: 11990, rating: 4.6, reviews: 421, image: '/placeholder.svg', category: 'Оперативная память', inStock: true },
+    { id: 22, name: 'Crucial P5 Plus 1TB', brand: 'Crucial', price: 9990, rating: 4.7, reviews: 367, image: '/placeholder.svg', category: 'SSD накопители', inStock: true },
+    { id: 23, name: 'GIGABYTE GeForce RTX 4070 Ti', brand: 'GIGABYTE', price: 89990, rating: 4.8, reviews: 434, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 24, name: 'AMD Ryzen 7 7800X3D', brand: 'AMD', price: 44990, oldPrice: 49990, rating: 4.9, reviews: 712, image: '/placeholder.svg', category: 'Процессоры', inStock: true },
   ];
 
-  const brands = ['Apple', 'Samsung', 'Xiaomi', 'Sony', 'ASUS'];
+  const brands = ['NVIDIA', 'AMD', 'Intel', 'ASUS', 'MSI', 'Corsair', 'G.Skill', 'Samsung', 'Western Digital', 'NZXT', 'Lian Li', 'Logitech', 'Razer', 'Kingston', 'GIGABYTE'];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
