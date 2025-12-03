@@ -193,7 +193,7 @@ const Index = () => {
           </div>
 
           <div className="flex items-end gap-2">
-            <p className="text-2xl font-bold">{product.price.toLocaleString()} ₽</p>
+            <p className="text-2xl font-extrabold">{product.price.toLocaleString()} ₽</p>
             {product.oldPrice && (
               <p className="text-sm text-muted-foreground line-through mb-1">
                 {product.oldPrice.toLocaleString()} ₽
