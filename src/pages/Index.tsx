@@ -34,8 +34,8 @@ const Index = () => {
   const [favorites, setFavorites] = useState<number[]>([]);
 
   const products: Product[] = [
-    { id: 1, name: 'NVIDIA GeForce RTX 4090', brand: 'NVIDIA', price: 189990, oldPrice: 219990, rating: 4.9, reviews: 543, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
-    { id: 2, name: 'AMD Radeon RX 7900 XTX', brand: 'AMD', price: 114990, rating: 4.8, reviews: 387, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 1, name: 'NVIDIA GeForce RTX 4090', brand: 'NVIDIA', price: 189990, oldPrice: 219990, rating: 4.9, reviews: 543, image: 'https://cdn.poehali.dev/projects/4afef8d4-a1e4-4ee1-a4aa-5a84fea3f7ed/files/bfc595b5-3a98-41cc-8cc7-d57bdd8c506e.jpg', category: 'Видеокарты', inStock: true },
+    { id: 2, name: 'AMD Radeon RX 7900 XTX', brand: 'AMD', price: 114990, rating: 4.8, reviews: 387, image: 'https://cdn.poehali.dev/projects/4afef8d4-a1e4-4ee1-a4aa-5a84fea3f7ed/files/fa0eb35f-aeb6-445c-b072-ef778660d932.jpg', category: 'Видеокарты', inStock: true },
     { id: 3, name: 'Intel Core i9-14900K', brand: 'Intel', price: 64990, rating: 4.9, reviews: 621, image: '/placeholder.svg', category: 'Процессоры', inStock: true },
     { id: 4, name: 'AMD Ryzen 9 7950X', brand: 'AMD', price: 59990, oldPrice: 69990, rating: 4.8, reviews: 498, image: '/placeholder.svg', category: 'Процессоры', inStock: true },
     { id: 5, name: 'ASUS ROG Strix Z790-E', brand: 'ASUS', price: 44990, rating: 4.7, reviews: 234, image: '/placeholder.svg', category: 'Материнские платы', inStock: true },
@@ -56,11 +56,17 @@ const Index = () => {
     { id: 20, name: 'Razer BlackWidow V4 Pro', brand: 'Razer', price: 24990, rating: 4.7, reviews: 556, image: '/placeholder.svg', category: 'Периферия', inStock: true },
     { id: 21, name: 'Kingston Fury Beast 32GB', brand: 'Kingston', price: 8990, oldPrice: 11990, rating: 4.6, reviews: 421, image: '/placeholder.svg', category: 'Оперативная память', inStock: true },
     { id: 22, name: 'Crucial P5 Plus 1TB', brand: 'Crucial', price: 9990, rating: 4.7, reviews: 367, image: '/placeholder.svg', category: 'SSD накопители', inStock: true },
-    { id: 23, name: 'GIGABYTE GeForce RTX 4070 Ti', brand: 'GIGABYTE', price: 89990, rating: 4.8, reviews: 434, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 23, name: 'GIGABYTE GeForce RTX 4070 Ti', brand: 'GIGABYTE', price: 89990, rating: 4.8, reviews: 434, image: 'https://cdn.poehali.dev/projects/4afef8d4-a1e4-4ee1-a4aa-5a84fea3f7ed/files/835edd8c-6225-421a-9e64-611881a3b17c.jpg', category: 'Видеокарты', inStock: true },
+    { id: 25, name: 'ASUS ROG Strix RTX 4080', brand: 'ASUS', price: 139990, oldPrice: 159990, rating: 4.9, reviews: 521, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 26, name: 'MSI GeForce RTX 4070 SUPER', brand: 'MSI', price: 79990, rating: 4.7, reviews: 389, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 27, name: 'NVIDIA GeForce RTX 4060 Ti', brand: 'NVIDIA', price: 54990, rating: 4.6, reviews: 456, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 28, name: 'AMD Radeon RX 7800 XT', brand: 'AMD', price: 69990, oldPrice: 74990, rating: 4.8, reviews: 412, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 29, name: 'Sapphire Radeon RX 7700 XT', brand: 'Sapphire', price: 54990, rating: 4.7, reviews: 367, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
+    { id: 30, name: 'GIGABYTE RTX 4060 EAGLE', brand: 'GIGABYTE', price: 39990, rating: 4.5, reviews: 298, image: '/placeholder.svg', category: 'Видеокарты', inStock: true },
     { id: 24, name: 'AMD Ryzen 7 7800X3D', brand: 'AMD', price: 44990, oldPrice: 49990, rating: 4.9, reviews: 712, image: '/placeholder.svg', category: 'Процессоры', inStock: true },
   ];
 
-  const brands = ['NVIDIA', 'AMD', 'Intel', 'ASUS', 'MSI', 'Corsair', 'G.Skill', 'Samsung', 'Western Digital', 'NZXT', 'Lian Li', 'Logitech', 'Razer', 'Kingston', 'GIGABYTE'];
+  const brands = ['NVIDIA', 'AMD', 'Intel', 'ASUS', 'MSI', 'Corsair', 'G.Skill', 'Samsung', 'Western Digital', 'NZXT', 'Lian Li', 'Logitech', 'Razer', 'Kingston', 'GIGABYTE', 'Sapphire'];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
